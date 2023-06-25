@@ -1,0 +1,32 @@
+manifestVersion: 1
+id: nginxproxymanager
+category: networking
+name: Nginx Proxy Manager
+version: "2.10.3"
+tagline: Expose your services easily and securely
+description: >-
+  This project comes as a pre-built docker image that enables you to easily
+  forward to your websites running at home or otherwise, including free SSL,
+  without having to know too much about Nginx or Letsencrypt.
+releaseNotes: >-
+  Important: Back up your entire instance before using this new version! As with
+  any new version, there may be breaking changes.
+
+  Changes
+  * Improved startup scripts, hopefully prevent failure on startup for more 
+    systems
+  * Updated s6-overlay
+  * Fix for certbot plugin install problems with new pip version
+developer: jc21
+website: https://nginxproxymanager.com/
+dependencies:
+repo: https://github.com/NginxProxyManager/nginx-proxy-manager
+support: https://github.com/NginxProxyManager/nginx-proxy-manager/discussions
+port: 4433
+gallery:
+  - https://nginxproxymanager.com/screenshots/login.png
+  - https://nginxproxymanager.com/screenshots/dashboard.png
+  - https://nginxproxymanager.com/screenshots/proxy-hosts.png
+path: ""
+defaultUsername: "admin@example.com"
+defaultPassword: "changeme"

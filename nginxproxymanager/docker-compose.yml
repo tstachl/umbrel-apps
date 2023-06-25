@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  app_proxy:
+    environment:
+      # <app-id>_<web-container-name>_1
+      # e.g. 'btc-rpc-explorer_web_1'
+      # Note that the '_1' at the end is needed
+      APP_HOST: nginxproxymanager_app_1
+      APP_PORT: 4433
+
+  app:
+    image: jc21/nginx-proxy-manager:2.10.3
+    restart: unless-stopped
+    stop_grace_period: 1m
+    ports:
+      - 4433:81
+      - 443:443
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+      - ${APP_DATA_DIR}/letsencrypt:/etc/letsencrypt
+
